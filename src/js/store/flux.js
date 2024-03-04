@@ -3,16 +3,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			demo: [
 				{
-					title: "FIRST",
+					title: "Javier Garcia",
+					id: "1",
+					background: "white",
+					initial: "white",
+					Location: "Barcelona"
+				},
+				{
+					title: "Second",
 					background: "white",
 					initial: "white"
 				},
 				{
-					title: "SECOND",
+					title: "Tercero",
+					background: "white",
+					initial: "white"
+				},
+				{
+					title: "Cuarto",
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -37,6 +49,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			updateInfo : () =>{
+				setStore({title: "Javi"})
 			}
 		}
 	};

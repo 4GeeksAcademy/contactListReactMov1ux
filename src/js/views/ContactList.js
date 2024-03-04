@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
 
-export const Demo = () => {
+export const ContactList = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
@@ -17,9 +17,10 @@ export const Demo = () => {
 							key={index}
 							className="list-group-item d-flex justify-content-between"
 							style={{ background: item.background }}>
-							<Link to={"/single/" + index}>
-								<span>Link to: {item.title}</span>
+							<Link to={"/ContactCard/" + index}>
+								<h3>Profile: {item.title}</h3>
 							</Link>
+							
 							{// Conditional render example
 							// Check to see if the background is orange, if so, display the message
 							item.background === "orange" ? (
@@ -30,13 +31,14 @@ export const Demo = () => {
 							<button className="btn btn-success" onClick={() => actions.changeColor(index, "orange")}>
 								Change Color
 							</button>
+							
 						</li>
 					);
 				})}
 			</ul>
 			<br />
-			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
+			<Link to="/AddNewContact">
+				<button className="btn btn-primary">Add new contact</button>
 			</Link>
 		</div>
 	);
