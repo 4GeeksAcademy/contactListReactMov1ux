@@ -10,17 +10,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					Location: "Barcelona"
 				},
 				{
-					title: "Second",
+					title: "Pepe",
 					background: "white",
 					initial: "white"
 				},
 				{
-					title: "Tercero",
+					title: "Pepa",
 					background: "white",
 					initial: "white"
 				},
 				{
-					title: "Cuarto",
+					title: "Pepo",
 					background: "white",
 					initial: "white"
 				}
