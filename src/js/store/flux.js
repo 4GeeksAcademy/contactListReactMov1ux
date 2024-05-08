@@ -1,36 +1,45 @@
+import { number } from "prop-types";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			demo: [
 				{
-					title: "Javier Garcia",
-					id: "1",
-					background: "white",
-					initial: "white",
-					Location: "Barcelona"
+					name: "Javier Garcia",
+					number: "1",
+					email: "jav@jav",
+					location: "Barcelona"
 				},
 				{
-					title: "Pepe",
-					background: "white",
-					initial: "white"
+					name: "Pepe",
+					number: "white",
+					email: "Pepe@pepe",
+					location: "Marte"
 				},
 				{
-					title: "Pepa",
-					background: "white",
-					initial: "white"
+					name: "Pepa",
+					number: "2",
+					email: "pepa@pepa",
+					location: "BCN"
 				},
-				{
-					title: "Pepo",
-					background: "white",
-					initial: "white"
-				}
+				
 			],
 		},
 		actions: {
+			deleteContact: (index) => {
+				const store = getStore();
+				const newDemo = store.demo.filter((_, i) => i !== index);
+				setStore({ demo: newDemo });
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+			addContact: (contact) => {
+                const store = getStore(); // Obtiene el estado actual del store.
+                const newDemo = [...store.demo, contact]; // Añade el nuevo contacto al array.
+                setStore({ demo: newDemo }); // Actualiza el store con el nuevo array.
+            },
 			loadSomeData: () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
